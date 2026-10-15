@@ -1,0 +1,9 @@
+# 로컬 작업 문서 — 저장소에 올리지 않음
+docs/
+
+# OS
+.DS_Store
+
+# 에디터
+.vscode/
+.idea/
