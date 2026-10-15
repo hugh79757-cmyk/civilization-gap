@@ -648,6 +648,39 @@ function riskFor(from, to) {
 const $ = id => document.getElementById(id);
 const el = (t, c, h) => { const e = document.createElement(t); if (c) e.className = c; if (h !== undefined) e.innerHTML = h; return e; };
 const esc = s => String(s).replace(/[<>&]/g, c => ({ "<": "&lt;", ">": "&gt;", "&": "&amp;" }[c]));
+
+// ── 공유 기능 ──
+function shareGame(customText) {
+  const url = location.href.split("#")[0];
+  const text = customText || `문명의 간격 — 7만 년 전 아프리카 5,000명 중 한 명으로 시작하는 혈통 시뮬레이션. 당신은 몇 세대까지 이어갈 수 있을까?`;
+  const data = { title: "문명의 간격 — 1/5000", text: text, url: url };
+  if (navigator.share) {
+    navigator.share(data).catch(() => {});
+  } else if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text + "\n" + url).then(() => {
+      alert("공유 문구가 복사되었습니다. 붙여넣기로 공유하세요!");
+    }).catch(() => fallbackCopy(text + "\n" + url));
+  } else {
+    fallbackCopy(text + "\n" + url);
+  }
+}
+function fallbackCopy(t) {
+  const ta = document.createElement("textarea");
+  ta.value = t;
+  ta.style.position = "fixed"; ta.style.opacity = "0";
+  document.body.appendChild(ta);
+  ta.select();
+  try { document.execCommand("copy"); alert("공유 문구가 복사되었습니다."); }
+  catch (e) { prompt("아래 텍스트를 복사하세요:", t); }
+  document.body.removeChild(ta);
+}
+function finalShareText() {
+  return `나는 7만 년 전 아프리카 5,000명 중 한 명으로 시작해 ${n(S.gen)}세대를 이어갔다! 사망 ${S.deaths.toLocaleString()}번, 혈통 ${S.lineages.toLocaleString()}번 끊김. 문명의 간격 — 당신은 몇 세대까지 갈 수 있을까?`;
+}
+function eraShareText() {
+  const e = ERAS[S.ei];
+  return `문명의 간격 — 지금 「${e.name}」 시대 (${S.ei + 1}/10), ${n(S.gen)}세대째 혈통을 이어가는 중! 7만 년의 여정, 함께 해볼래?`;
+}
 const n = v => Math.round(v).toLocaleString();
 
 function bar(k, v, color) {
@@ -680,6 +713,7 @@ function drawTop() {
 
 function drawSide() {
   $("side").innerHTML =
+    `<div class="panel"><button class="share-btn small" id="share-progress">📤 진행 상황 공유</button></div>` +
     `<div class="panel"><h3>문명</h3>${civBars()}</div>` +
     `<div class="panel"><h3>이 사람</h3>${meBars()}</div>` +
     `<div class="panel"><h3>3대 사망원 장부 <small>세대 단위</small></h3>${ledgerList()}</div>` +
@@ -689,6 +723,8 @@ function drawSide() {
       <div class="kv"><span>최고 도달</span><b>${n(S.deepest)}세대</b></div>
       <div class="kv"><span>인구(이 혈통 지역)</span><b>${popAt(Math.max(0, actSpan()[1])).toFixed(1)}백만</b></div>
     </div>`;
+  const sp = $("share-progress");
+  if (sp) sp.onclick = () => shareGame(eraShareText());
 }
 
 function drawAct() {
@@ -748,7 +784,7 @@ function drawDeath(d) {
        <div class="dmeta">${esc(d.meta)}</div>
        <p class="txt">${esc(d.text)}</p>
        <div class="dledger">${esc(d.ledger)}</div>
-       ${d.child ? `<p class="next-gen">이 이름은 여기서 끊기지 않았다. <b>${esc(d.child)}</b>가 물려받았다.</p>`
+       ${d.child ? `<p class="next-gen">이 이름은 여기서 끊기지 않았다. <b>${esc(d.child.name)} · ${esc(d.child.clan)}</b>가 물려받았다.</p>`
                  : `<p class="next-gen dead">이 이름은 여기서 끊겼다. 혈통이 끝났다.</p>`}
      </div>
      <button class="next" id="nx">${d.child ? "아이의 시대" : "새 계통"}</button>`;
@@ -790,8 +826,10 @@ function drawEnd() {
         그리고 이 ${n(S.gen)}세대를 지나서야, 비로소 당신이 있는 시대로 왔다.
       </p>
       <button class="next" id="nx">다른 1/5,000</button>
+      <button class="share-btn" id="share-final">📤 결과 공유하기</button>
     </div>`;
   $("nx").onclick = () => { reset(); drawTitle(); };
+  $("share-final").onclick = () => shareGame(finalShareText());
   drawTop(); drawSide();
 }
 

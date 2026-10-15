@@ -140,6 +140,16 @@ button{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
 }
 .reroll:hover{border-color:var(--acc);color:var(--acc)}
 
+/* ── 공유 버튼 ── */
+.share-btn{display:block;width:100%;margin:12px 0 0;padding:14px 20px;border:none;border-radius:10px;background:linear-gradient(135deg,#f59e0b,#ef4444);color:#fff;font-size:16px;font-weight:700;cursor:pointer;transition:transform .15s,box-shadow .15s}
+.share-btn:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(239,68,68,.4)}
+.share-btn:active{transform:translateY(0)}
+.share-btn.small{padding:10px 14px;font-size:14px;margin:0}
+@media(max-width:640px){
+  .share-btn{padding:16px 20px;font-size:17px;min-height:56px}
+  .share-btn.small{padding:12px;font-size:15px;min-height:48px}
+}
+
 /* ── 히어로 이미지 ── */
 .hero{margin:0 0 20px;border-radius:10px;overflow:hidden;border:1px solid var(--line)}
 .hero img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
