@@ -7,3 +7,6 @@ docs/
 # 에디터
 .vscode/
 .idea/
+
+# wrangler 로컬 상태
+.wrangler/

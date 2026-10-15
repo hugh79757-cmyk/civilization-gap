@@ -104,7 +104,7 @@ function buildRoster() {
 /* d = 지표 변화. t = 선택지, r = 결과 문장 */
 const ERAS = [
 {
-  name: "중석기 — 아프리카의 불", from: -70000, to: -45000, ep: "70,000년 전, 당신은 아프리카 대형동물 사냥꾼 5,000명 중 한 사람이다.",
+  name: "중석기 — 아프리카의 불", img: "assets/era1.webp", from: -70000, to: -45000, ep: "70,000년 전, 당신은 아프리카 대형동물 사냥꾼 5,000명 중 한 사람이다.",
   acts: [
     { title: "불을 지키던 밤", text: "구호가 되감기면 다 함께 죽고, 그을린 재가 식량이다. 화로 곁의 자리는 권력이고, 당신은 그 곁을 지켜야 할 사람이었다.",
       ch: [
@@ -151,7 +151,7 @@ const ERAS = [
   ]
 },
 {
-  name: "아웃오프아프리카 — 대이동", from: -45000, to: -20000, ep: "7만 년 전 당신의 첫째가 아프리카를 떠났다. 수만 년간 걷기만으로 인류가 다른 대륙을 채웠다.",
+  name: "아웃오프아프리카 — 대이동", img: "assets/era2.webp", from: -45000, to: -20000, ep: "7만 년 전 당신의 첫째가 아프리카를 떠났다. 수만 년간 걷기만으로 인류가 다른 대륙을 채웠다.",
   acts: [
     { title: "오아시스의 대가", text: "물 한 자루에 목숨이 걸린 오아시스 앞에서, 당신은 불을 들고 서 있었다. 이 흔적은 나중에 역사가 된다.",
       ch: [
@@ -198,7 +198,7 @@ const ERAS = [
   ]
 },
 {
-  name: "상부 수렵 사회", from: -20000, to: -12000, ep: "이 혈통의 무리는 가장 큰 몸집과 가장 정확한 지도를 가졌지만, 발걸음이 가장 느린 무리였다.",
+  name: "상부 수렵 사회", img: "assets/era1.webp", from: -20000, to: -12000, ep: "이 혈통의 무리는 가장 큰 몸집과 가장 정확한 지도를 가졌지만, 발걸음이 가장 느린 무리였다.",
   acts: [
     { title: "뼈로 세운 집", text: "집은 무리를 지탱하는 빔이었다. 태어난 집이 무니까 이동이 느렸다. 이 느림은 결국 결실을 것이다.",
       ch: [
@@ -245,7 +245,7 @@ const ERAS = [
   ]
 },
 {
-  name: "신석기 — 농경혁명", from: -12000, to: -5000, ep: "인류 역사에서 가장 큰 사건이 일어났다. 그리고 아무도 그것을 큰 사건이라고 부르지 않았다.",
+  name: "신석기 — 농경혁명", img: "assets/era3.webp", from: -12000, to: -5000, ep: "인류 역사에서 가장 큰 사건이 일어났다. 그리고 아무도 그것을 큰 사건이라고 부르지 않았다.",
   acts: [
     { title: "들판의 씨앗", text: "정착지의 바닥을 파다 보면 겉은 경이로웠고, 그 밑 수근이 보름에 한 번씩 무더기를 올렸다. 같은 것을 세 번 본 사람이 오늘의 시작을 결정했다.",
       ch: [
@@ -292,7 +292,7 @@ const ERAS = [
   ]
 },
 {
-  name: "최초 국가", from: -5000, to: -3300, ep: "6천 개 무리의 무리가 하나의 언어를 쓰고 one's 영역을 정하기 시작한다. 국가는 이 시기에 태어났다.",
+  name: "최초 국가", img: "assets/era4.webp", from: -5000, to: -3300, ep: "6천 개 무리의 무리가 하나의 언어를 쓰고 one's 영역을 정하기 시작한다. 국가는 이 시기에 태어났다.",
   acts: [
     { title: "관이 생기다", text: "가장 큰 무리를 다스리는 사람이 누구인지Everyone가 알게 됐다. 그게 목숨이 아니라 허리띠에 묶인 완장이었다.",
       ch: [
@@ -339,7 +339,7 @@ const ERAS = [
   ]
 },
 {
-  name: "청동기 — 제국", from: -3300, to: -1200, ep: "이 무리는 세계에서 가장 많은 사람이 같은 법 아래 사는 방법을 발견한다. 제국이 여기서 시작된다.",
+  name: "청동기 — 제국", img: "assets/era5.webp", from: -3300, to: -1200, ep: "이 무리는 세계에서 가장 많은 사람이 같은 법 아래 사는 방법을 발견한다. 제국이 여기서 시작된다.",
   acts: [
     { title: "청단의 합금", text: "구리 ten과 주석을 섞으면 바늘보다 단단하고 성질이 다른 금속이 된다. 이 재료가 이 시대의 이름이 됐다.",
       ch: [
@@ -386,7 +386,7 @@ const ERAS = [
   ]
 },
 {
-  name: "고전 문명의 축적", from: -1200, to: -500, ep: "지금 당신이 쓰는 단어의 상당수가 여기서 만들어졌다. 확실하지 않은 것 중 확실한 것을 모으는 시기가 왔다.",
+  name: "고전 문명의 축적", img: "assets/era6.webp", from: -1200, to: -500, ep: "지금 당신이 쓰는 단어의 상당수가 여기서 만들어졌다. 확실하지 않은 것 중 확실한 것을 모으는 시기가 왔다.",
   acts: [
     { title: "페르시아와 아케메네스", text: "불과 국경 사이에서 가장 큰 제국이 첫 번째로 시도되었다. 실패하자마자 두 번째가 시작됐다.",
       ch: [
@@ -433,7 +433,7 @@ const ERAS = [
   ]
 },
 {
-  name: "중세와 병원 조합", from: -500, to: 500, ep: "476년, 로마가 공식적으로 끝났다. 서유럽은 수백 년 동안 어떻게 통치할지 몰랐다.",
+  name: "중세와 병원 조합", img: "assets/era7.webp", from: -500, to: 500, ep: "476년, 로마가 공식적으로 끝났다. 서유럽은 수백 년 동안 어떻게 통치할지 몰랐다.",
   acts: [
     { title: "최초의 전염병", text: "541년, 2년에 걸쳐 세계 인구의 절반이 죽었다. 원인은 아무도 몰랐고, 그 무서움만큼 정확한 답을 찾는 방식이 새로 만들어졌다.",
       ch: [
@@ -480,7 +480,7 @@ const ERAS = [
   ]
 },
 {
-  name: "몽골 제국", from: 500, to: 1500, ep: "이 시기 인구는 약 네 배가 됐다. 인구가 늘면 전쟁도 함께 늘어난다.",
+  name: "몽골 제국", img: "assets/era5.webp", from: 500, to: 1500, ep: "이 시기 인구는 약 네 배가 됐다. 인구가 늘면 전쟁도 함께 늘어난다.",
   acts: [
     { title: "최대 정복", text: "몽골은 역사상 가장 짧은 기간에 가장 넓은 땅을 차지했다. 그 광기 뒤에 제국이라는 형태가 완성됐다.",
       ch: [
@@ -527,7 +527,7 @@ const ERAS = [
   ]
 },
 {
-  name: "근대 — 산업과 두 번의 총성", from: 1500, to: 2026, ep: "여기서 526년 동안 인류는 지금까지의 전부를 앞질렀다. 그리고 2억 명을 잃었다.",
+  name: "근대 — 산업과 두 번의 총성", img: "assets/era9.webp", from: 1500, to: 2026, ep: "여기서 526년 동안 인류는 지금까지의 전부를 앞질렀다. 그리고 2억 명을 잃었다.",
   acts: [
     { title: "새 세계와 그 대가", text: "1492년, 이 무리가 도착한 땅에는 이미 사람이 살고 있었다. 그 사람들이 90% 죽기 전까지 한 세기가 걸리지 않았다.",
       ch: [
@@ -696,6 +696,7 @@ function drawAct() {
   const main = $("main");
   main.innerHTML =
     `<div class="era">${esc(e.name)} <span>${yearLabel(e.from)} — ${yearLabel(e.to)}</span></div>
+     ${e.img ? `<div class="hero"><img src="${e.img}" alt="" loading="lazy"></div>` : ""}
      <h2>${esc(a.title)}</h2>
      <p class="txt">${esc(a.text)}</p>
      <div class="epoch">${esc(e.ep)}</div>
@@ -735,11 +736,14 @@ function drawResult(c) {
   $("nx").onclick = advance;
 }
 
+const DEATH_IMG = { war: "assets/death-war.webp", disease: "assets/death-disease.webp", famine: "assets/death-famine.webp", other: "assets/death-natural.webp" };
 function drawDeath(d) {
   const main = $("main");
+  const dimg = DEATH_IMG[d.dtype] || DEATH_IMG.other;
   main.innerHTML =
     `<div class="death">
        <div class="dtag">${d.kind === "event" ? "3대 사망원" : "그 외의 세월"}</div>
+       <div class="hero death-hero"><img src="${dimg}" alt="" loading="lazy"></div>
        <h2>${esc(d.title)}</h2>
        <div class="dmeta">${esc(d.meta)}</div>
        <p class="txt">${esc(d.text)}</p>
@@ -766,6 +770,7 @@ function drawEnd() {
     `<div class="final">
       <div class="fgen">${n(S.gen)}</div>
       <div class="flab">세대</div>
+      <div class="hero end-hero"><img src="assets/era10.webp" alt="" loading="lazy"></div>
       <p class="ftxt">
         7만 년 전 아프리카에 5,000명이 있었다.<br>
         그중 한 사람이 시작해서, 지금 여기까지 왔다.<br>
@@ -798,6 +803,7 @@ function drawTitle() {
     `<div class="title">
       <div class="t1">문 명 의 간 격</div>
       <div class="t2">1 / 5,000 &nbsp;·&nbsp; 70,000년 전 아프리카에서 시작하는 한 혈통</div>
+      <div class="hero title-hero"><img src="assets/title.webp" alt="" loading="lazy"></div>
       <p class="t3">
         7만 년 전 아프리카 대형동물 사냥꾼 5,000명.<br>
         당신은 그중 한 사람이다.<br><br>
@@ -907,7 +913,7 @@ function advance() {
     text = "별다른 사건 없이 죽었다. 이 무리에서 대부분의 사람은 이렇게 죽는다. 기록에 남지 않는 죽음이 수만 년 동안 인류의 대부분이었다.";
   }
 
-  drawDeath({ kind: ev ? "event" : "other", title, meta, text, ledger, child });
+  drawDeath({ kind: ev ? "event" : "other", dtype: type, title, meta, text, ledger, child });
   S.banner = null;
   S.pendingChild = child;
 }

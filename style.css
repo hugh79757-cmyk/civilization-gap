@@ -28,6 +28,65 @@ body{
 }
 @media(max-width:940px){#stage{grid-template-columns:1fr}}
 
+/* ── 모바일 최적화 ── */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{
+  overflow-x:hidden;
+  padding-left:env(safe-area-inset-left);padding-right:env(safe-area-inset-right);
+  padding-bottom:env(safe-area-inset-bottom);
+}
+button{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+
+@media(max-width:640px){
+  body{font-size:14px}
+  /* 헤더 컴팩트화 */
+  #hdr{gap:12px;padding:8px 14px}
+  .hrow b{font-size:13px}
+  .hrow span{font-size:9.5px}
+  /* 레이아웃 여백 축소 */
+  #stage{padding:20px 14px 70px;gap:22px}
+  /* 타이틀 */
+  .t1{font-size:30px;letter-spacing:.1em}
+  .t2{font-size:11px;margin-bottom:16px}
+  .t3{font-size:13.5px;line-height:1.85;margin-bottom:20px}
+  .card{padding:16px 18px}
+  .cname{font-size:22px}
+  /* 막 본문 */
+  #main h2{font-size:21px;margin-bottom:10px}
+  .txt{font-size:14px;line-height:1.85}
+  .era{font-size:10.5px;margin-bottom:12px}
+  .epoch{margin:16px 0 14px;padding:9px 12px;font-size:11.5px}
+  /* 선택지 터치 타겟 확대 */
+  .ch{padding:16px 14px 16px 44px;font-size:14px;min-height:56px}
+  .cn{left:13px;top:16px}
+  .chd{font-size:10.5px}
+  .choices{gap:10px;margin-top:16px}
+  /* 버튼 터치 타겟 */
+  .next{width:100%;padding:16px;font-size:15px;margin-top:18px}
+  .reroll{padding:12px 18px;font-size:13px;min-height:44px}
+  /* 결과·사망·엔딩 */
+  .delt{gap:6px;margin:14px 0}
+  .ev{font-size:12px;padding:10px 12px}
+  .dmeta{font-size:10.5px}
+  .dledger{font-size:12px}
+  .fgen{font-size:48px}
+  .ftxt{font-size:14.5px}
+  .fdom b{font-size:17px}
+  .fnote{font-size:12.5px}
+  /* 사이드 패널: 본문 아래로, 접힘 없이 */
+  #side{order:2}
+  .panel{padding:12px 13px;margin-bottom:10px}
+  .stat{grid-template-columns:30px 1fr 24px}
+  .lg{grid-template-columns:56px 1fr 42px}
+}
+@media(max-width:380px){
+  .t1{font-size:26px}
+  #main h2{font-size:19px}
+  .cname{font-size:19px}
+  #stage{padding:16px 12px 60px}
+  .fgen{font-size:40px}
+}
+
 /* ── 패널 ── */
 .panel{
   background:var(--bg2); border:1px solid var(--line); border-radius:9px;
@@ -80,6 +139,17 @@ body{
   padding:8px 15px;font-size:12px;cursor:pointer;
 }
 .reroll:hover{border-color:var(--acc);color:var(--acc)}
+
+/* ── 히어로 이미지 ── */
+.hero{margin:0 0 20px;border-radius:10px;overflow:hidden;border:1px solid var(--line)}
+.hero img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+.title-hero{margin:0 0 24px}
+.death-hero{margin:0 0 18px}
+.end-hero{margin:0 0 24px}
+@media(max-width:640px){
+  .hero{margin-bottom:14px;border-radius:8px}
+  .title-hero{margin-bottom:18px}
+}
 
 /* ── 막 본문 ── */
 .era{font:11.5px/1 var(--mono);color:var(--acc);letter-spacing:.12em;margin-bottom:16px}
